@@ -10,7 +10,9 @@ import SwiftUI
 struct ContentView: View {
     @StateObject private var viewModel = ClockInViewModel()
     @Binding var showClockInModal: Bool
-    private let nfcService = NFCService()
+    
+    @State private var showNFCErrorAlert = false
+    @State private var nfcErrorMessage = "Dieser NFC‑Tag ist nicht autorisiert."
     
     var body: some View {
         VStack(spacing: 30) {
@@ -26,9 +28,12 @@ struct ContentView: View {
             }
             
             Button("Arbeitszeit erfassen") {
-                nfcService.scanTag { success in
-                    if success {
+                viewModel.startScan { authorized in
+                    if authorized {
                         showClockInModal = true
+                    } else {
+                        nfcErrorMessage = "Deine Arbeitszeit konnte nicht erfasst werden. Versuche es mit einem anderen NFC‑Tag erneut."
+                        showNFCErrorAlert = true
                     }
                 }
             }
@@ -41,6 +46,11 @@ struct ContentView: View {
             ClockInView(viewModel: viewModel, isPresented: $showClockInModal)
                 .presentationDetents([.height(230)])
         }
+        .alert("NFC-Tag ist nicht autorisiert", isPresented: $showNFCErrorAlert) {
+            Button("OK", role: .cancel) { }
+        } message: {
+            Text(nfcErrorMessage)
+        }
     }
 }
 
@@ -51,3 +61,4 @@ struct ContentView: View {
 #Preview("Direkt mit Sheet") {
     ContentView(showClockInModal: .constant(true))
 }
+
