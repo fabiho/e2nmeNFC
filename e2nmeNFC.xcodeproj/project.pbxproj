@@ -29,9 +29,22 @@
 		1F68B7892E584EBF00B686D7 /* e2nmeNFCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = e2nmeNFCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		1F68B7DE2E59B1D000B686D7 /* Exceptions for "e2nmeNFC" folder in "e2nmeNFC" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 1F68B7712E584EBE00B686D7 /* e2nmeNFC */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		1F68B7742E584EBE00B686D7 /* e2nmeNFC */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				1F68B7DE2E59B1D000B686D7 /* Exceptions for "e2nmeNFC" folder in "e2nmeNFC" target */,
+			);
 			path = e2nmeNFC;
 			sourceTree = "<group>";
 		};
@@ -395,11 +408,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = e2nmeNFC/e2nmeNFC.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RA6VQ9228Y;
+				DEVELOPMENT_TEAM = Q4X3HB62DU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = e2nmeNFC/Info.plist;
+				INFOPLIST_KEY_NFCReaderUsageDescription = "Zum Erfassen von NFC-Tags für die Arbeitszeiterfassung.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -410,7 +426,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = de.fabiho.e2nmeNFC;
+				PRODUCT_BUNDLE_IDENTIFIER = de.e2n.meNFC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -423,11 +439,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = e2nmeNFC/e2nmeNFC.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RA6VQ9228Y;
+				DEVELOPMENT_TEAM = Q4X3HB62DU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = e2nmeNFC/Info.plist;
+				INFOPLIST_KEY_NFCReaderUsageDescription = "Zum Erfassen von NFC-Tags für die Arbeitszeiterfassung.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -438,7 +457,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = de.fabiho.e2nmeNFC;
+				PRODUCT_BUNDLE_IDENTIFIER = de.e2n.meNFC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

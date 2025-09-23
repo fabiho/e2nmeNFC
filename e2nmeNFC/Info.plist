@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NFCReaderUsageDescription</key>
+	<string>Zum Erfassen von NFC-Tags für die Arbeitszeiterfassung.
+Zum Erfassen von NFC-Tags für die Arbeitszeiterfassung.
+</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>de.firma.meineapp</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>meineapp</string>
+			</array>
+		</dict>
+		<dict/>
+	</array>
+</dict>
+</plist>
