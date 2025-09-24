@@ -8,12 +8,27 @@
 import SwiftUI
 import Combine
 
-class ClockInViewModel: ObservableObject {
+protocol NFCScanning {
+    func startScan(completion: ((Bool) -> Void)?)
+}
+
+extension NFCReader: NFCScanning {}
+
+@MainActor
+final class ClockInViewModel: ObservableObject {
     @Published var isClockInEnabled: Bool = false
     @Published var elapsedSeconds: Int = 0
     
     private var timer: AnyCancellable?
-    private let nfcReader = NFCReader()
+    private let nfcReader: NFCScanning
+    
+    init(nfcReader: NFCScanning = NFCReader()) {
+        self.nfcReader = nfcReader
+    }
+    
+    deinit {
+        timer?.cancel()
+    }
     
     func startClock() {
         guard !isClockInEnabled else { return }
@@ -34,10 +49,8 @@ class ClockInViewModel: ObservableObject {
     }
     
     func formattedTime() -> String {
-        let hours = elapsedSeconds / 3600
-        let minutes = (elapsedSeconds % 3600) / 60
-        let seconds = elapsedSeconds % 60
-        return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+        let time = TimeInterval(elapsedSeconds)
+        return Self.timeFormatter.string(from: time) ?? "00:00:00"
     }
     
     func startScan(onResult: @escaping (Bool) -> Void) {
@@ -45,4 +58,12 @@ class ClockInViewModel: ObservableObject {
             onResult(authorized)
         }
     }
+    
+    private static let timeFormatter: DateComponentsFormatter = {
+        let f = DateComponentsFormatter()
+        f.allowedUnits = [.hour, .minute, .second]
+        f.unitsStyle = .positional
+        f.zeroFormattingBehavior = [.pad]
+        return f
+    }()
 }
