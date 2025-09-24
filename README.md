@@ -59,11 +59,10 @@ Die App basiert auf dem **Model-View-ViewModel (MVVM)** Architekturmuster:
    cd <REPOSITORY>
 
 2. Projekt in Xcode öffnen:
-   
-  open e2nmeNFC.xcodeproj
+   open e2nmeNFC.xcodeproj
 
-3. App auf Simulator oder physischem iPhone starten
-*(Hinweis: NFC-Scan ist nur auf physischen Geräten verfügbar).
+5. App auf Simulator oder physischem iPhone starten
+   *(Hinweis: NFC-Scan ist nur auf physischen Geräten verfügbar)*
 
 ## Anforderungen
 
