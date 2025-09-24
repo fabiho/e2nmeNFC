@@ -1,78 +1,50 @@
-
 import SwiftUI
 
 struct ClockInView: View {
     @ObservedObject var viewModel: ClockInViewModel
     @Binding var isPresented: Bool
-    
-    private let autoCloseDuration: TimeInterval = 15
+    let autoCloseDuration: TimeInterval
+
     @State private var endDate: Date = .now
-    
+
+    init(viewModel: ClockInViewModel, isPresented: Binding<Bool>, autoCloseDuration: TimeInterval = 15) {
+        self.viewModel = viewModel
+        self._isPresented = isPresented
+        self.autoCloseDuration = autoCloseDuration
+    }
+
     var body: some View {
         ZStack(alignment: .topTrailing) {
             Color.blue.opacity(0.2)
-            
+                .ignoresSafeArea()
+
             VStack(spacing: 25) {
-                HStack {
-                    Spacer()
-                    Button {
-                        isPresented = false
-                    } label: {
-                        Image(systemName: "xmark.circle")
-                            .font(.system(size: 25))
-                    }
-                    .padding(.trailing)
+                CloseButton(iconName: "xmark.circle") {
+                    isPresented = false
                 }
                 .padding(.top, 20)
-                
-                TimelineView(.animation) { context in
-                    let remaining = max(0, endDate.timeIntervalSince(context.date))
-                    let progress = max(0, min(1, 1 - remaining / autoCloseDuration))
-                    
-                    VStack(spacing: 10) {
-                        Text(viewModel.isClockInEnabled
-                             ? "Möchtest du Deine Arbeitszeit beenden?"
-                             : "Möchtest du Deine Arbeitszeit beginnen?")
-                            .font(.headline)
-                        
-                        ProgressView(value: progress)
-                            .progressViewStyle(.linear)
-                            .tint(.blue)
-                            .padding(.horizontal)
-                        
-                        Text("In \(Int(ceil(remaining)))s erneut scannen")
-                            .font(.footnote)
-                            .foregroundStyle(.secondary)
-                    }
-                }
-                
-                if viewModel.isClockInEnabled {
-                    Button {
-                        viewModel.stopClock()
-                        isPresented = false
-                    } label: {
-                        Image(systemName: "stop.circle")
-                        Text("Beenden")
-                    }
-                    .buttonStyle(.borderedProminent)
-                    .controlSize(.large)
-                    .tint(.red)
-                } else {
-                    Button {
+
+                CountdownProgressView(
+                    title: viewModel.isClockInEnabled
+                        ? "Möchtest du Deine Arbeitszeit beenden?"
+                        : "Möchtest du Deine Arbeitszeit beginnen?",
+                    endDate: endDate,
+                    duration: autoCloseDuration
+                )
+
+                PrimaryActionButton(
+                    isStop: viewModel.isClockInEnabled,
+                    startAction: {
                         viewModel.startClock()
                         isPresented = false
-                    } label: {
-                        Image(systemName: "stopwatch")
-                        Text("Beginnen")
+                    },
+                    stopAction: {
+                        viewModel.stopClock()
+                        isPresented = false
                     }
-                    .buttonStyle(.borderedProminent)
-                    .controlSize(.large)
-                    .tint(.blue)
-                    .padding(.horizontal)
-                }
+                )
             }
         }
-        .ignoresSafeArea()
         .task(id: isPresented) {
             guard isPresented else { return }
             await MainActor.run {
@@ -89,27 +61,23 @@ struct ClockInView: View {
 }
 
 #Preview("Beginnen") {
-    struct PreviewHost: View {
-        @State var presented = true
-        var body: some View {
-            ClockInView(viewModel: ClockInViewModel(), isPresented: $presented)
-        }
-    }
-    return PreviewHost()
+    ClockInView(
+        viewModel: ClockInViewModel(),
+        isPresented: .constant(true)
+    )
+    .presentationDetents([.height(230)])
 }
 
 #Preview("Ende") {
-    struct PreviewHost: View {
-        @State var presented = true
-        let vm: ClockInViewModel = {
-            let vm = ClockInViewModel()
-            vm.isClockInEnabled = true
-            vm.elapsedSeconds = 4523
-            return vm
-        }()
-        var body: some View {
-            ClockInView(viewModel: vm, isPresented: $presented)
-        }
-    }
-    return PreviewHost()
+    let vm: ClockInViewModel = {
+        let vm = ClockInViewModel()
+        vm.isClockInEnabled = true
+        vm.elapsedSeconds = 4523
+        return vm
+    }()
+    return ClockInView(
+        viewModel: vm,
+        isPresented: .constant(true)
+    )
+    .presentationDetents([.height(230)])
 }
