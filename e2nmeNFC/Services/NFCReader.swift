@@ -1,9 +1,3 @@
-//
-//  NFCReader.swift
-//  e2nmeNFC
-//
-//  Created by Fabian Hofer on 22.09.25.
-//
 
 import Foundation
 import CoreNFC
