@@ -53,12 +53,6 @@ final class ClockInViewModel: ObservableObject {
         return Self.timeFormatter.string(from: time) ?? "00:00:00"
     }
     
-    func startScan(onResult: @escaping (Bool) -> Void) {
-        nfcReader.startScan { authorized in
-            onResult(authorized)
-        }
-    }
-    
     private static let timeFormatter: DateComponentsFormatter = {
         let f = DateComponentsFormatter()
         f.allowedUnits = [.hour, .minute, .second]
@@ -66,4 +60,10 @@ final class ClockInViewModel: ObservableObject {
         f.zeroFormattingBehavior = [.pad]
         return f
     }()
+    
+    func startScan(onResult: @escaping (Bool) -> Void) {
+        nfcReader.startScan { authorized in
+            onResult(authorized)
+        }
+    }
 }
