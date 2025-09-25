@@ -37,9 +37,9 @@ Die Anwendung zeigt, wie Mitarbeitende ihre Arbeitszeit über ein NFC-Tag starte
 
 ## Demo-Video
 
-[▶️ In der App](https://github.com/user-attachments/assets/7b0861e4-ed04-4444-9a9f-6713a3a6dd4f)
-[▶️ DeepLink](https://github.com/user-attachments/assets/855c747b-8e89-4b2e-a1ab-868d49dfc72e)
-[▶️ Not Authorised](https://github.com/user-attachments/assets/51e292fe-79f4-46f5-b0a8-242dafa01e13)
+- [▶️ In der App](https://github.com/user-attachments/assets/7b0861e4-ed04-4444-9a9f-6713a3a6dd4f)
+- [▶️ DeepLink](https://github.com/user-attachments/assets/855c747b-8e89-4b2e-a1ab-868d49dfc72e)
+- [▶️ Not Authorised](https://github.com/user-attachments/assets/51e292fe-79f4-46f5-b0a8-242dafa01e13)
 
 
 ---
