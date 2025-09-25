@@ -30,6 +30,7 @@ Die Anwendung zeigt, wie Mitarbeitende ihre Arbeitszeit über ein NFC-Tag starte
 ---
 
 ## Screenshots
+[e2nmeNFCApp.pdf](https://github.com/user-attachments/files/22531785/e2nmeNFCApp.pdf)
 
 <p align="center">
   <img src="https://github.com/user-attachments/files/22531710/e2nmeNFCApp.pdf" width="30%" />
