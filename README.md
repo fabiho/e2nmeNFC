@@ -37,7 +37,10 @@ Die Anwendung zeigt, wie Mitarbeitende ihre Arbeitszeit über ein NFC-Tag starte
 
 ## Demo-Video
 
-*Optional: Link oder GIF mit einer kurzen Demonstration der App.*  
+[▶️ In der App](https://github.com/fabiho/e2nmeNFC/blob/main/NFCinApp.MP4)
+[▶️ DeepLink](https://github.com/fabiho/e2nmeNFC/blob/main/NFCdeeplink.MP4)
+[▶️ Not Authorised](https://github.com/fabiho/e2nmeNFC/blob/main/NFCnotAuthorised.MP4)
+
 
 ---
 
