@@ -30,18 +30,17 @@ Die Anwendung zeigt, wie Mitarbeitende ihre Arbeitszeit über ein NFC-Tag starte
 ---
 
 ## Screenshots
-[e2nmeNFCApp.pdf](https://github.com/user-attachments/files/22531785/e2nmeNFCApp.pdf)
 
 <p align="center">
-  <img src="https://github.com/user-attachments/files/22531710/e2nmeNFCApp.pdf" width="30%" />
-  <img src="https://github.com/user-attachments/files/22531717/NFCScan.pdf" width="30%" />
-  <img src="https://github.com/user-attachments/files/22531713/AZbeginnen.pdf" width="30%" />
+  <img width="30%" src="https://github.com/user-attachments/assets/8871c302-5890-4aaa-a74a-0a0d8ca9902a" />
+  <img width="30%" src="https://github.com/user-attachments/assets/6cabc3a6-e6b1-4b24-9d1e-b43cdad83a7c" />
+  <img width="30%" src="https://github.com/user-attachments/assets/8eed9d29-b1fe-4018-8790-3d87dd1cf420" />
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/files/22531716/AZbeenden.pdf" width="30%" />
-  <img src="https://github.com/user-attachments/files/22531714/NFCDeeplink.pdf" width="30%" />
-  <img src="https://github.com/user-attachments/files/22531711/NFCnotAuthorised.pdf" width="30%" />
+  <img width="30%" src="https://github.com/user-attachments/assets/15f784bd-6b85-4805-9dbe-fb514149ca3d" />
+  <img width="30%" src="https://github.com/user-attachments/assets/6a4fdcc1-dc24-433d-acf4-6be1dff17491" />
+  <img width="30%" src="https://github.com/user-attachments/assets/e732faf3-2c85-45f7-9f04-ae5c9797db21" />
 </p>
 
 ---
