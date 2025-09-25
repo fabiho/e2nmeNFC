@@ -1,4 +1,4 @@
-# SwiftUI NFC Prototyp – Standortbasierte Zeiterfassung
+[e2nmeNFCApp.pdf](https://github.com/user-attachments/files/22531455/e2nmeNFCApp.pdf)# SwiftUI NFC Prototyp – Standortbasierte Zeiterfassung
 
 Dieser Prototyp wurde im Rahmen einer Bachelorarbeit an der IU Internationale Hochschule in Kooperation mit der e2n GmbH entwickelt. Ziel ist die prototypische Umsetzung einer standortgebundenen Zeiterfassung mit NFC-Technologie in einer mobilen App. 
 
@@ -31,13 +31,27 @@ Die Anwendung zeigt, wie Mitarbeitende ihre Arbeitszeit über ein NFC-Tag starte
 
 ## Screenshots
 
-*Screenshots der App einfügen (z. B. Startscreen, NFC-Scan, Dialoge, Timer).*  
+<p align="center">
+  <img src="https://github.com/user-attachments/files/22531501/e2nmeNFCApp.pdf" width="30%" />
+  <img src="https://github.com/user-attachments/files/22531499/NFCScan.pdf" width="30%" />
+  <img src="https://github.com/user-attachments/files/22531486/AZbeginnen.pdf" width="30%" />
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/files/22531485/AZbeenden.pdf" width="30%" />
+  <img src="https://github.com/user-attachments/files/22531494/NFCDeeplink.pdf" width="30%" />
+  <img src="https://github.com/user-attachments/files/22531497/NFCnotAuthorised.pdf" width="30%" />
+</p>
 
 ---
 
+
 ## Demo-Video
 
-*Optional: Link oder GIF mit einer kurzen Demonstration der App.*  
+- [▶️ In der App](https://github.com/user-attachments/assets/7b0861e4-ed04-4444-9a9f-6713a3a6dd4f)
+- [▶️ DeepLink](https://github.com/user-attachments/assets/855c747b-8e89-4b2e-a1ab-868d49dfc72e)
+- [▶️ Not Authorised](https://github.com/user-attachments/assets/51e292fe-79f4-46f5-b0a8-242dafa01e13)
+
 
 ---
 
